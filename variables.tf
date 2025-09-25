@@ -20,7 +20,7 @@ variable "db_password" {
   description = "The database password (stored in Key Vault secret)"
   type        = string
   sensitive   = true
-  default     = "Teste##1234"
+  default     = "Mysql##1234"
 }
 
 variable "key_name" {
@@ -37,36 +37,6 @@ variable "sku_name" {
     condition     = contains(["standard", "premium"], var.sku_name)
     error_message = "The sku_name must be one of the following: standard, premium."
   }
-}
-
-variable "postgresql_name" {
-  type        = string
-  description = "Nome do servidor PostgreSQL"
-  default     = "postgres-webapp"
-}
-
-variable "postgresql_admin" {
-  type        = string
-  description = "Nome usuário Admin do servidor POstgreSQL"
-  default     = "pgadmin"
-}
-
-variable "postgresql_sku" {
-  type        = string
-  description = "SKU do servidor PostgreSQL"
-  default     = "B_Standard_B1ms"
-}
-
-variable "postgresql_version" {
-  type        = string
-  description = "Versão do servidor PostgreSQL"
-  default     = "13"
-}
-
-variable "postgresql_database" {
-  type        = string
-  description = "Nome do banco de dados PostgreSQL"
-  default     = "pgwebappdb"
 }
 
 variable "mysql_name" {
