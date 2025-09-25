@@ -26,7 +26,7 @@ resource "azurerm_linux_web_app" "webapp" {
     KEY_VAULT_URL                 = azurerm_key_vault.vault.vault_uri
     DB_HOST                       = azurerm_mysql_flexible_server.mysql.fqdn
     DB_NAME                       = azurerm_mysql_flexible_database.mysql_database.name
-    DB_USER                       = azurerm_key_vault_secret.my_password.value
+    DB_USER                       = var.mysql_admin
     DB_PORT                       = "3306"
     SECRET_KEY                    = "@Microsoft.KeyVault(VaultName=${azurerm_key_vault.vault.name};SecretName=${azurerm_key_vault_secret.my_password.name})"
     SCM_DO_BUILD_DURING_DEPLOYMENT = "true"  # No Terraform sempre como string
