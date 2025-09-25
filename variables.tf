@@ -72,7 +72,7 @@ variable "postgresql_database" {
 variable "mysql_name" {
   type        = string
   description = "Nome do servidor MySQL"
-  default     = "mysql-webapp-pf0807"
+  default     = "mysql-webapp-rm558143"
 }
 
 variable "mysql_admin" {
